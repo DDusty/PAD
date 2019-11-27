@@ -1,0 +1,7 @@
+sites gebruikt voor rfid en database gedoe
+http://raspberrywebserver.com/sql-databases/using-mysql-on-a-raspberry-pi.html
+https://mysqlclient.readthedocs.io/user_guide.html
+https://stackoverflow.com/questions/902408/how-to-use-variables-in-sql-statement-in-python
+https://pynative.com/python-mysql-select-query-to-fetch-data/
+https://pymysql.readthedocs.io/en/latest/
+https://github.com/mxgxw/MFRC522-python/blob/master/

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>panel</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <a href=""><div id="add">Voeg Toe</div></a>
+    <a href=""><div id="sort-date">Sorteer Datum</div></a>
+    <a href=""><div id="restart">Restart punten</div></a>
+
+    <table>
+        <tr>
+            <th><b>Voornaam</b></th>
+            <th><b>Achternaam</b></th>
+            <th><b>Punten</b></th>
+        </tr>
+        {% for users in users %}
+        <tr>
+            <th>{{ users.get_first_name() }}</th>
+            <th>{{ users.get_last_name() }}</th>
+            <th>{{ users.get_points() }}</th>
+            <th>
+             <form action="{{ url_for('delete_user', user_name=users.get_last_name()) }}" method=post>
+                 <input type=submit value=Delete>
+             </form>
+            </th>
+        </form>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

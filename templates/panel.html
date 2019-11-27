@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="/admin/map">Kaart</a>
+    </div>
+
+    <form action="/update_user" method="post" class="form_add_user">
+        <input name="firstname" type="text" placeholder="Voornaam">
+        <input name="middlename" type="text" placeholder="tussenvoegsel">
+        <input name="lastname" type="text" placeholder="Achternaam" >
+        <input name="id" type="hidden" id="idField" value="">
+        <input type="submit" value="Aanpassen" class="update">
+        <input type="button" value="annuleren" class="cancel_form" style="background-color: red;">
+    </form>
+
+    <div class="table_panel">
+        <table class="table_content">
+
+                <tr>
+                    <th><b>Naam</b></th>
+                    <th><b>Punten</b></th>
+                </tr>
+
+            {% for users in users %}
+                <tr>
+                    <td>{{ users.get_first_name() }} {{ users.get_last_name() }}</td>
+                    <td>{{ users.get_points() }}</td>
+                    <td>
+                         <form action="{{ url_for('delete_user', user_name=users.get_last_name()) }}" method=post>
+                             <input type="submit" value="Delete">
+                         </form>
+                    </td>
+                    <td>
+                        <span class="user-id">{{ users.get_userid() }}</span>
+                        <input type="submit" value="update" data-name="{{ users.get_last_name() }}" class="add" style="background-color: lightgreen;">
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+    <script src="{{ url_for('static', filename='js/panel.js') }}"></script>
+</body>
+</html>
+
+<script src="{{ url_for('static', filename='js/page-switch.js') }}"></script>

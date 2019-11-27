@@ -1,0 +1,15 @@
+node_modules
+.idea
+*.xml
+
+package-lock\.json
+
+package\.json
+
+app/styles/styles\.css
+
+amsta/__pycache__/
+__pycache__
+venv
+
+config\.txt

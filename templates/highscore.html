@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Highscore pagina</title>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/barba.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/barba.js"></script>
+    <script src="../js/moment.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="../js/socket.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/sass/highscore_2.0.css') }}">
+    <script>
+        var timer = setTimeout(function () {
+            window.location = 'kies'
+        }, 10000);
+    </script>
+</head>
+
+<body id="barba-wrapper">
+
+<div class="scoretabel barba-container" style="height: 100%;">
+
+    <div class="highscoreHeader">
+        <h1 id="highscoreH1">Scorebord</h1>
+    </div>
+
+    <div class="scoretabel">
+
+        <table class="rankingList">
+
+            <div class="tableHeader">
+                <tr class="tableRowLeaderBoard">
+                    <th class="tableHeaderLeaderBoard">Rank</th>
+                    <th class="tableHeaderLeaderBoard">Naam</th>
+                    <th class="tableHeaderLeaderBoard">Punten</th>
+                </tr>
+            </div>
+
+            <div class="tableBody">
+                {% set i = 1 %}
+                {% for user in users %}
+
+                    <tr class="tableRowLeaderBoard">
+                        <td class="TdLeaderBoard">
+                            <div class="rankRow"></div>
+                        </td>
+                        <td class="TdLeaderBoard"> {{ user.get_first_name() }} {{ user.get_last_name() }} </td>
+                        <td class="TdLeaderBoard"> {{ user.get_points() }} </td>
+                    </tr>
+
+                    {% set i = i + 1 %}
+                {% endfor %}
+            </div>
+
+        </table>
+
+
+    </div>
+</div>
+
+</body>
+
+</html>
+
+<script src="{{ url_for('static', filename='js/page-switch.js') }}"></script>

@@ -1,0 +1,70 @@
+.main{
+  border: 1px black;
+  background-color: burlywood;
+  width: 100%;
+  height: 100%;
+  display: block;
+  &.main2{
+    background-color: aquamarine;
+  }
+}
+
+#barba-wrapper{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.old-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &.start{
+    transform: translateX(0vw);
+  }
+
+  &.finished{
+    transform: translateX(0vw);
+  }
+
+  transition: all 2s;
+
+}
+
+.new-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &.start{
+    transform: translateX(100vw);
+  }
+
+  &.finished{
+    transform: translateX(0vw);
+    transition: ease-in all 1s;
+  }
+
+
+
+}
+
+.test{
+  width: 100px;
+  height: 100px;
+  display: block;
+  background-color: red;
+  &.test2{
+    background-color: #54CCD2;
+  }
+}

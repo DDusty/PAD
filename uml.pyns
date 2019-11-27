@@ -1,0 +1,14 @@
+# PynSource Version 1.2
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin. Comments are saved.'}
+{'type':'umlshape', 'id':'DBHandler', 'x':7, 'y':93, 'width':266, 'height':410, 'attrs': 'db_name|ip_adress|database|password|user_name', 'meths': 'send_query|set_password|query_get_points_from_user_id|set_ip_adress|close_connection|get_password|open_connection|set_user_name|query_get_all_stops|get_ip_adress|__init__|get_db_name|query_get_user_from_id|query_get_number_of_stop_from_id|get_user_name|query_get_highest_ranking_users|set_db_name'}
+{'type':'umlshape', 'id':'pymysql.connect', 'x':26, 'y':0, 'width':160, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'FitStop', 'x':30, 'y':604, 'width':162, 'height':282, 'attrs': 'stop_id|stop_location_x|stop_location_y|stop_name', 'meths': '__init__|get_|set_stop_id|get_stop_location_x|set_stop_location_x|get_stop_location_y|set_stop_location_y|get_stop_name|set_stop_name|save_stop'}
+{'type':'umlshape', 'id':'Scanner', 'x':342, 'y':98, 'width':98, 'height':122, 'attrs': 'stop_id', 'meths': 'new_user_id|__init__|run'}
+{'type':'umlshape', 'id':'threading.Thread', 'x':302, 'y':8, 'width':170, 'height':28, 'attrs': '', 'meths': ''}
+{'type':'umlshape', 'id':'User', 'x':246, 'y':607, 'width':162, 'height':298, 'attrs': 'user_id|first_name|last_name', 'meths': '__init__|get_userid|set_user_id|get_first_name|set_first_name|get_last_name|set_last_name|get_all_stops|register_stop|save_user|get_number_of_stops|get_points'}
+{'type':'umlshape', 'id':'WebServer', 'x':521, 'y':590, 'width':106, 'height':314, 'attrs': 'ip|port|debug|stop_id', 'meths': '__init__|get_ip|set_ip|get_port|set_port|get_debug|set_debug|get_stop_id|set_stop_id|start_server|page_exsists|show_page'}
+{'type':'edge', 'id':'pymysql.connect_to_DBHandler', 'source':'pymysql.connect', 'target':'DBHandler', 'uml_edge_type': 'composition'}
+{'type':'edge', 'id':'Scanner_to_threading.Thread', 'source':'Scanner', 'target':'threading.Thread', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'FitStop_to_DBHandler', 'source':'FitStop', 'target':'DBHandler', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'User_to_DBHandler', 'source':'User', 'target':'DBHandler', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'WebServer_to_DBHandler', 'source':'WebServer', 'target':'DBHandler', 'uml_edge_type': 'generalisation'}

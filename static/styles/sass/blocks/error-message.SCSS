@@ -1,0 +1,21 @@
+.messageBox{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+  font-size: 5rem;
+  position: fixed;
+  z-index: 1;
+  text-align: center;
+  padding-top: 18%;
+
+  .button{
+    width: 25%;
+    padding: 1%;
+    font-size: 3rem;
+    display: block;
+    cursor: pointer;
+    margin-left: 37.5%;
+    margin-top: 2%
+  }
+}

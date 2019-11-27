@@ -1,0 +1,94 @@
+.rankingList {
+    color: white;
+    border-spacing: 0;
+}
+
+.tableRowLeaderBoard:first-child {
+    background-color: #405b76;
+}
+
+.tableRowLeaderBoard:nth-child(2) > .TdLeaderBoard {
+    border-top-width: 0;
+}
+
+.tableRowLeaderBoard {
+    background-color: #85b2d9;
+    text-align: center;
+    width: 100%;
+}
+
+.tableHeaderLeaderBoard, .TdLeaderBoard {
+    margin: 0;
+    padding: .5em 1.5em;
+    text-align: center;
+    border-width: 3px 0px;
+    border-color: #405b76;
+    border-style: solid;
+    width: 30% !important;
+    font-size: 1rem;
+}
+
+.tableHeaderLeaderBoard {
+    border-bottom-width: 1px;
+    border-bottom-width: 1px;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+    border: none;
+    border-bottom: none;
+    text-decoration-line: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.tableHeaderLeaderBoard:nth-child(even) {
+    border-width: 0 4px;
+    border-color: #85b2d9;
+    border-style: solid;
+    font-size: 1.5rem;
+}
+
+.TdLeaderBoard:nth-child(even) {
+    border-width: 3px 4px;
+    border-color: #405b76;
+    border-style: solid;
+    font-size: 1rem;
+}
+
+.rankingList {
+    padding: 20px;
+    padding-bottom: 5px;
+    padding-top: 0px;
+    font-size: 7rem;
+    border: #485F6E;
+}
+
+.tableBody {
+    position: center;
+}
+
+.tableHeader {
+    position: center;
+}
+
+.highscoreHeader {
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+}
+
+.tableBody {
+    counter-reset: section;
+}
+
+.rankRow::before {
+    counter-increment: section;
+    content: counter(section);
+}
+
+.rankRow {
+    font-size: 1rem;
+}
+
+#highscoreH1 {
+    font-size: 1em;
+}

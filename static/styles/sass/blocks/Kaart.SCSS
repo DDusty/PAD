@@ -1,0 +1,214 @@
+.paal {
+  background-image: url("../images/paaltje_icon_2.png");
+  position: absolute;
+  width: 26px;
+  height: 80px;
+  background-size: cover;
+  z-index: 4;
+  background-repeat: no-repeat;
+}
+
+#background {
+  background-image: url("../images/nieuwekaart.png");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+#map{
+    background-color: #48C9B0;
+    width: 38%;
+    float: right;
+    height: 100vh;
+}
+
+#highscore > h2, #map > h2{
+    color: white;
+    text-align: center;
+    padding-top: 30vh;
+    font-size: 60px;
+}
+
+#highscore{
+    background-color: #85C1E9;
+    width: 38%;
+    float: right;
+    height: 100vh;
+}
+
+#scan{
+    width: 26%;
+    height: 100vh;
+    background-color: #EC7063;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    float: left;
+}
+
+#scan > h2{
+    margin-top: 20vh;
+}
+
+.arrow{
+    width: 50%;
+    animation: float 2s infinite;
+    filter: invert(100%) brightness(100);
+    margin-left: 25%;
+}
+
+.arrow-left{
+    width: 50%;
+    animation: float-left 2s infinite;
+    filter: invert(100%) brightness(100);
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0),;
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes float-left {
+  0%,100% {
+    transform: translateX(0),;
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+#restart{
+    background-color: #84F530;
+    width: auto;
+    height: auto;
+    float: left;
+    padding: 10px;
+    color: black;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.add{
+    float: left;
+}
+
+#footer{
+    position: absolute;
+    bottom: 0;
+    background-color:  #f2f2f2;
+    color: white;
+    width: 100vw;
+    text-align: center;
+}
+
+#footer > button{
+    padding: 5px;
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#form_add_stop{
+    display: none;
+    position: absolute;
+    width: 20vw;
+    height: 23vh;
+    margin-left: 39vw;
+    margin-top: 28vh;
+    left: 40;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    z-index: 5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#form_add_stop > input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#form_add_stop > input[type=submit], input[type=button] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.delete_stop{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-left: 12px;
+    margin-top: -12px;
+    cursor: pointer;
+}
+
+.table_panel{
+    width: 100vw;
+    float: left;
+}
+
+.table_content{
+    width: 60%;
+    margin-left: 20%;
+}
+
+.table_panel th{
+    text-align: left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.table_panel td{
+    font-size: 2rem;
+    margin-left: 10vw;
+    text-align: left;
+    width: max-content;
+}
+
+.table_panel input{
+    width: 5vw;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #F53060;
+    display: inline-box;
+}
+
+.table_panel input:hover{
+    background-color: red;
+}
+
+.header{
+    margin-left: 48vw;
+    padding: 5px;
+    margin-top: 5px;
+}

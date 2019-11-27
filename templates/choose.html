@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kies tussen deze mooie pagina's</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+
+    <div id="scan">
+        <h2>Scan uw pasje</h2>
+        <img class="arrow-left" src="{{ url_for('static', filename='images/arrow-left.png') }}">
+    </div>
+
+    <a href="/kaart">
+    <div id="map">
+        <h2>Kaart</h2>
+        <img class="arrow" src="{{ url_for('static', filename='images/arrow.png') }}">
+    </div>
+    </a>
+
+    <a href="/highscore">
+    <div id="highscore">
+        <h2>Scoren</h2>
+        <img class="arrow" src="{{ url_for('static', filename='images/arrow.png') }}">
+    </div>
+    </a>
+</body>
+</html>
+
+<script src="{{ url_for('static', filename='js/page-switch.js') }}"></script>

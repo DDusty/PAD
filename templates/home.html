@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>Persoons pagina</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <script>
+        let points = {{ user.get_points() }} {% if able_to_get_points %} -10 {% endif %};
+        let newPoints = {{ user.get_points()}};
+        $("#points").text(points);
+    </script>
+    <!--<script src="../js/Persoonspagina.js"></script>-->
+
+</head>
+<body id="barba-wrapper" class="">
+
+<div class="persooninfo barba-container">
+<div class="messageBox">
+    <span id="errormessage">
+
+    </span>
+    <button class="button">
+      <span>
+          Oke
+      </span>
+    </button>
+</div>
+
+<div class="persooninfo">
+    <div class="primaryinformatie">
+        <p>Hallo, {{ user.get_first_name() }}</p>
+    </div>
+
+    <div class="secondaireinformatie">
+
+        <div class="progress_txt">
+            {% if able_to_get_points %}
+                <p class="large green">Goed bezig!<br></p>
+                 <p>
+                     U heeft 10 punten gekregen<br>
+                     U bent vandaag al langs {{ recieved_stops_today }} stop(s) gegaan<br>
+                     Nog {{ stops_to_go }} stops te gaan!
+                 </p>
+            {% else %}
+                {% if not able_to_get_points and stops_to_go > 0  %}
+
+                    <p class="large red">Oh nee!<br></p>
+                    <p>
+                        U bent vandaag al langs deze stop geweest.<br>
+                        Ga opzoek naar de andere stop(s)<br>
+                        Nog {{stops_to_go}} stops te gaan vandaag!
+                    </p>
+
+                {% else %}
+
+                    <p class="large green">Goed bezig!<br></p>
+                    <p>
+                        U heeft alle {{ total_amount_stops }} stops gehaald.<br>
+                        Morgen kunt u weer punten halen.
+                    </p>
+
+                {% endif %}
+            {% endif %}
+
+        </div>
+        <div class="progressbar">
+            <div class="progress">
+                <p>
+
+                </p>
+            </div>
+        </div>
+        <div class="stoptogo">
+            <p>  </p>
+        </div>
+
+    </div>
+<div class="points {% if able_to_get_points %} add-points {% endif %}"><p>+10</p></div>
+
+    <div class="pointsinfo">
+        <p id="points"></p>
+        <p>punten<br>totaal</p>
+    </div>
+</div>
+</div>
+<script>
+    $("#points").text(points);
+</script>
+
+<script>
+    setTimeout(function(){
+        document.getElementsByClassName("add-points")[0].classList.add("fadeout");
+
+        console.log(newPoints);
+        $("#points").text(newPoints);
+        $(".points").remove();
+
+    }, 2000);
+
+</script>
+
+<script src="{{ url_for('static', filename='js/page-switch.js') }}"></script>
+
+</body>
+</html>

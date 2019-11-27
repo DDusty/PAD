@@ -1,0 +1,26 @@
+<html>
+
+<head>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var timer = setTimeout(function() {
+            window.location='kies'
+        }, 10000);
+    </script>
+</head>
+<body>
+
+    <div id="background" style="max-width: 800px; max-height: 480px;">
+
+    </div>
+
+    {% for stop in stops %}
+    <div class="paal" style="left: {{ stop.get_stop_location_x() }}px; top: {{ stop.get_stop_location_y() }}px"></div>
+    {% endfor %}
+
+</body>
+
+</html>
+
+<script src="{{ url_for('static', filename='js/page-switch.js') }}"></script>
